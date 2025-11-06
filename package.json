@@ -1,0 +1,22 @@
+{
+  "name": "modelo-evento",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Template de landing one-page servida por Node/Express",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "dependencies": {
+    "compression": "^1.7.5",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Luzes do Tempo — Concerto Cênico Contemporâneo</title>
+  <meta name="description" content="Um concerto cênico contemporâneo que une música, palavra e movimento. Lucas Monteiro (soprano masculino) e o Aurora Ensemble conduzem uma viagem poética através de luzes, sombras e memórias." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=League+Spartan:wght@600;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{
+      --vinho:#3a0002; /* mais profundo */
+      --vinho-2:#5a0e12; /* meia-luz */
+      --vermelho:#90080b;
+      --dourado:#c9a669;
+      --dourado-2:#b8924f;
+      --marfim:#f7f3ea;
+      --grafite:#111111;
+    }
+    html{scroll-behavior:smooth}
+    body{background:radial-gradient(1000px 600px at 70% -10%, rgba(201,166,105,.22) 0%, transparent 60%),linear-gradient(180deg, #0a0a0a 0%, #1a0d0d 25%, #0d0d0d 100%);color:#eae6df}
+    .font-display{font-family:"Cinzel","League Spartan",ui-serif,Georgia,serif}
+    .font-serif{font-family:"Crimson Pro",ui-serif,Georgia,serif}
+    .gold-text{color:var(--dourado)}
+    .gold-border{border-color:color-mix(in oklab, var(--dourado) 70%, #ffffff)}
+    .gold-bg{background:linear-gradient(180deg, var(--dourado), var(--dourado-2))}
+    .ring-gold{box-shadow:0 0 0 1px color-mix(in oklab, var(--dourado) 55%, #fff)}
+    .hero-vignette:before{content:"";position:absolute;inset:0;background:radial-gradient(1200px 500px at 50% -10%,rgba(0,0,0,.35) 0%,transparent 60%),radial-gradient(900px 350px at 50% 120%,rgba(0,0,0,.65) 0%,transparent 60%)}
+    .ornament{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="300" height="14" viewBox="0 0 300 14"><g fill="none" stroke="%23c9a669" stroke-width="1.2" stroke-linecap="round"><path d="M2 7h110"/><path d="M188 7h110"/><path d="M150 1c-3 2-6 5-6 6s3 4 6 6c3-2 6-5 6-6s-3-4-6-6z"/></g></svg>');background-repeat:no-repeat;background-position:center;background-size:240px auto}
+    .dropcap:first-letter{font-family:"Cinzel";font-weight:700;float:left;font-size:3.3rem;line-height:.8;margin:.12rem .45rem 0 0;color:var(--dourado)}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.15);backdrop-filter:blur(4px);}
+    .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:999px;padding:.75rem 1.15rem;font-weight:700;letter-spacing:.02em}
+    .btn-primary{background:linear-gradient(180deg, var(--vermelho), var(--vinho-2));border:1px solid rgba(255,255,255,.2)}
+    .btn-primary:hover{filter:brightness(1.05)}
+    .btn-ghost{border:1px solid rgba(255,255,255,.25);background:transparent}
+    .btn-gold{background:linear-gradient(180deg, var(--dourado), var(--dourado-2));color:#1b1209;border:1px solid rgba(0,0,0,.25)}
+    .playbill{background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));border:1px solid rgba(255,255,255,.15)}
+    .smallcaps{font-variant-caps:small-caps;letter-spacing:.06em}
+  </style>
+  <meta property="og:title" content="Luzes do Tempo — Concerto Cênico Contemporâneo" />
+  <meta property="og:description" content="Lucas Monteiro e Aurora Ensemble em uma experiência cênico-musical de luz, palavra e som." />
+  <meta property="og:type" content="website" />
+  <meta name="theme-color" content="#3a0002" />
+</head>
+<body class="font-serif">
+  <!-- Header -->
+  <header class="fixed top-0 inset-x-0 z-40 backdrop-blur bg-black/30 border-b border-white/10">
+    <div class="mx-auto max-w-6xl px-4 py-3 flex items-center gap-6">
+      <a href="#top" class="font-display text-xl tracking-wide gold-text">Luzes do Tempo</a>
+      <nav class="ml-auto hidden md:flex items-center gap-6 text-sm">
+        <a href="#espetaculo" class="hover:text-[var(--dourado)]">O Espetáculo</a>
+        <a href="#programa" class="hover:text-[var(--dourado)]">Programa</a>
+        <a href="#artista" class="hover:text-[var(--dourado)]">O Artista</a>
+        <a href="#ensemble" class="hover:text-[var(--dourado)]">Ensemble</a>
+        <a href="#producao" class="hover:text-[var(--dourado)]">Produção</a>
+        <a href="#compositor" class="hover:text-[var(--dourado)]">Compositor</a>
+        <a href="#proposta" class="hover:text-[var(--dourado)]">Proposta</a>
+        <a href="#contato" class="hover:text-[var(--dourado)]">Contato</a>
+      </nav>
+      <a href="#contato" class="ml-auto md:ml-0 btn btn-gold">Solicitar datas</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="top" class="relative min-h-[86vh] grid place-items-center hero-vignette overflow-hidden">
+    <img aria-hidden class="absolute inset-0 w-full h-full object-cover object-[50%_30%] opacity-50" src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=2000&auto=format&fit=crop" alt="Cortina de teatro iluminada em vermelho"/>
+    <div class="relative z-10 mx-auto max-w-6xl px-4 pt-28 pb-16 text-center">
+      <div class="ornament h-[14px] w-full opacity-80"></div>
+      <h1 class="mt-6 font-display text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.05] tracking-wide">
+        <span class="smallcaps gold-text">Concerto Cênico Contemporâneo</span><br/>
+        Luzes do Tempo
+      </h1>
+      <p class="mt-4 text-lg md:text-xl max-w-3xl mx-auto text-neutral-200 dropcap">
+        Um encontro entre música, palavra e movimento. <strong>Lucas Monteiro</strong> (soprano masculino) e o <strong>Aurora Ensemble</strong> transformam memórias em som e luz, costurando cenas poéticas em um percurso sensorial.
+      </p>
+      <div class="mt-7 flex flex-wrap gap-3 justify-center">
+        <a href="#programa" class="btn btn-primary">Ver o programa</a>
+        <a href="#dossier" class="btn btn-ghost">Baixar dossiê (PDF)</a>
+        <a href="#contato" class="btn btn-gold">Propostas e agenda</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- O Espetáculo -->
+  <section id="espetaculo" class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-5">
+        <h2 class="font-display text-3xl md:text-4xl gold-text">O Espetáculo</h2>
+        <p class="mt-4 text-[#efeae3]">Duas partes que revelam <em>duas atmosferas</em>: energia e contemplação. A escrita vocal destaca a <strong>tessitura de soprano masculino</strong> em diálogo com cordas, oboé e baixo contínuo, trazendo intensidade dramática e clareza de texto.</p>
+      </div>
+      <div class="md:col-span-7 grid md:grid-cols-2 gap-6">
+        <div class="card p-6 rounded-2xl">
+          <h3 class="font-display text-lg gold-text">Premissa</h3>
+          <p class="mt-2 text-neutral-200">Música como dramaturgia. Cenas curtas, linguagem direta e foco na palavra cantada.</p>
+        </div>
+        <div class="card p-6 rounded-2xl">
+          <h3 class="font-display text-lg gold-text">Formato</h3>
+          <p class="mt-2 text-neutral-200">Árias, interlúdios e poemas em dois atos complementares, com narrativa visual minimalista.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Programa (Playbill) -->
+  <section id="programa" class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <div class="playbill rounded-3xl p-8 md:p-10 ring-gold">
+      <h2 class="font-display text-3xl md:text-4xl text-center gold-text">Programa</h2>
+      <div class="ornament h-[14px] w-full my-4 opacity-70"></div>
+      <div class="grid md:grid-cols-2 gap-10">
+        <div>
+          <h3 class="font-display text-xl gold-text">Ato I — Ritmo & Luz</h3>
+          <ul class="mt-3 space-y-2 list-disc list-inside text-neutral-100/90">
+            <li>Prólogo: claridade (abertura instrumental)</li>
+            <li>Ária da cidade — soprano</li>
+            <li>Interlúdio — cordas e cravo</li>
+            <li>Ária de impulso — soprano</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-display text-xl gold-text">Ato II — Sombra & Voz</h3>
+          <ul class="mt-3 space-y-2 list-disc list-inside text-neutral-100/90">
+            <li>Recitativo: o silêncio fala</li>
+            <li>Ária da noite — soprano</li>
+            <li>Interlúdio — oboé e baixo contínuo</li>
+            <li>Ária final — soprano</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 grid md:grid-cols-3 gap-6 text-sm text-neutral-300">
+        <div class="card p-4 rounded-2xl">
+          <strong class="gold-text">Duração</strong>
+          <p>~ 75 min (sem intervalo) • versão com intervalo disponível</p>
+        </div>
+        <div class="card p-4 rounded-2xl">
+          <strong class="gold-text">Formação</strong>
+          <p>Soprano (Lucas Monteiro) + Aurora Ensemble (cordas, oboé, cravo/órgão, teorba)</p>
+        </div>
+        <div class="card p-4 rounded-2xl">
+          <strong class="gold-text">Língua</strong>
+          <p>Português contemporâneo • surtítulos opcionais</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- O Artista -->
+  <section id="artista" class="py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-6 order-2 md:order-1">
+        <h2 class="font-display text-3xl md:text-4xl gold-text">Lucas Monteiro</h2>
+        <p class="mt-4 text-neutral-100/90">“Soprano masculino de presença luminosa e domínio de <em>mezza voce</em>.” Atuou em palcos europeus e latino-americanos, colaborando com grupos de música antiga e projetos cênico-musicais contemporâneos.</p>
+        <audio controls class="mt-4 w-full">
+          <source src="" type="audio/mpeg" />Seu navegador não suporta áudio HTML5.
+        </audio>
+      </div>
+      <div class="md:col-span-6 order-1 md:order-2">
+        <div class="relative aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/15">
+          <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?q=80&w=1600&auto=format&fit=crop" alt="Cantor lírico em palco" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ensemble -->
+  <section id="ensemble" class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-5">
+        <h2 class="font-display text-3xl md:text-4xl gold-text">Aurora Ensemble</h2>
+        <p class="mt-4 text-neutral-100/90">Desde 2010, direção de <strong>Helena Vidal</strong>. Pesquisa, rigor e imaginação para recontar repertórios com frescor e potência cênica.</p>
+      </div>
+      <div class="md:col-span-7 grid md:grid-cols-2 gap-6">
+        <div class="card p-6 rounded-2xl">
+          <h3 class="font-display text-lg gold-text">Repertório vivo</h3>
+          <p class="mt-2 text-neutral-200">Obras históricas e criações atuais em diálogo constante.</p>
+        </div>
+        <div class="card p-6 rounded-2xl">
+          <h3 class="font-display text-lg gold-text">Pesquisa & precisão</h3>
+          <p class="mt-2 text-neutral-200">Práticas historicamente informadas com olhar contemporâneo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Produção -->
+  <section id="producao" class="bg-black/30 py-16 md:py-24">
+    <div class="mx-auto max-w-6xl px-4 grid md:grid-cols-12 gap-10 items-center">
+      <div class="md:col-span-6">
+        <h2 class="font-display text-3xl md:text-4xl gold-text">Produção — Helena Vidal</h2>
+        <p class="mt-4 text-neutral-100/90">Musicóloga e diretora artística. Constrói pontes entre tradição e presente, desenhando experiências onde a música age como cena.</p>
+      </div>
+      <div class="md:col-span-6">
+        <div class="relative aspect-[4/3] rounded-3xl overflow-hidden ring-1 ring-white/15">
+          <img src="https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=1600&auto=format&fit=crop" alt="Cravo e partitura" class="w-full h-full object-cover" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compositor -->
+  <section id="compositor" class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-5">
+        <h2 class="font-display text-3xl md:text-4xl gold-text">Álvaro Cesário (fictício)</h2>
+        <p class="mt-4 text-neutral-100/90">Compositor imaginário que simboliza o elo entre tradição e invenção. Partituras que respiram poesia e movimento, abertas à recriação cênica e à voz em registro agudo.</p>
+      </div>
+      <div class="md:col-span-7">
+        <div class="card p-6 rounded-2xl">
+          <h3 class="font-display text-lg gold-text">Recriação cênico-musical</h3>
+          <p class="mt-2 text-neutral-200">Árias e interlúdios concebidos para ressaltar o texto, a presença corporal e o gesto sonoro, com impacto emocional direto.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Press / Depoimentos -->
+  <section class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <div class="grid md:grid-cols-3 gap-6">
+      <blockquote class="card p-6 rounded-2xl italic text-neutral-200">“Voz de rara pureza e dramaticidade envolvente.” <span class="not-italic gold-text">— Imprensa</span></blockquote>
+      <blockquote class="card p-6 rounded-2xl italic text-neutral-200">“O Aurora Ensemble ilumina o repertório com precisão e poesia.” <span class="not-italic gold-text">— Crítica</span></blockquote>
+      <blockquote class="card p-6 rounded-2xl italic text-neutral-200">“Uma experiência sonora que permanece na memória.” <span class="not-italic gold-text">— Público</span></blockquote>
+    </div>
+  </section>
+
+  <!-- Dossiê / Rider -->
+  <section id="dossier" class="mx-auto max-w-6xl px-4 pb-4">
+    <div class="rounded-3xl playbill p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div>
+        <h3 class="font-display text-2xl gold-text">Dossiê completo & Rider técnico</h3>
+        <p class="text-neutral-300">Baixe o PDF de apresentação com informações artísticas, técnicas e contato.</p>
+      </div>
+      <a href="Luzes do Tempo — Dossiê.pdf" class="btn btn-gold">Baixar PDF</a>
+    </div>
+  </section>
+
+  <!-- Parceiros -->
+  <section id="parceiros" class="mx-auto max-w-6xl px-4 py-16 md:py-24">
+    <div class="grid md:grid-cols-12 gap-10 items-start">
+      <div class="md:col-span-5">
+        <h2 class="font-display text-3xl md:text-4xl gold-text">Parceiros</h2>
+        <p class="mt-4 text-neutral-100/90">Produção: <strong>Lumina Produções</strong><br>Parceria: <strong>Ateliê Cenarium</strong><br>Conceito cênico: <strong>Estúdio Horizonte</strong><br>Coprodução: <strong>Casa Vértice</strong></p>
+      </div>
+      <div class="md:col-span-7 grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div class="rounded-2xl playbill h-24 grid place-items-center text-sm text-neutral-300">Logo 1</div>
+        <div class="rounded-2xl playbill h-24 grid place-items-center text-sm text-neutral-300">Logo 2</div>
+        <div class="rounded-2xl playbill h-24 grid place-items-center text-sm text-neutral-300">Logo 3</div>
+        <div class="rounded-2xl playbill h-24 grid place-items-center text-sm text-neutral-300">Logo 4</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <footer id="contato" class="bg-black/70 text-neutral-100">
+    <div class="mx-auto max-w-6xl px-4 py-16 md:py-24 grid md:grid-cols-3 gap-12">
+      <div>
+        <h3 class="font-display text-2xl gold-text">Luzes do Tempo</h3>
+        <p class="mt-3 text-neutral-300">Solicitações de agenda, coproduções e imprensa.</p>
+      </div>
+      <div>
+        <h4 class="font-display text-lg gold-text">Contato (Portugal)</h4>
+        <p class="mt-2 text-neutral-300">contato@seudominio.com<br/>+351 900 000 000</p>
+      </div>
+      <div>
+        <h4 class="font-display text-lg gold-text">Contato (Brasil)</h4>
+        <p class="mt-2 text-neutral-300">producoes@seudominio.com<br/>+55 11 90000-0000</p>
+      </div>
+    </div>
+    <div class="border-t border-white/10">
+      <div class="mx-auto max-w-6xl px-4 py-6 text-sm text-neutral-400 flex flex-wrap items-center justify-between gap-4">
+        <p>© <span id="y"></span> Luzes do Tempo. Todos os direitos reservados.</p>
+        <nav class="flex items-center gap-4">
+          <a href="#programa" class="hover:text-[var(--dourado)]">Programa</a>
+          <a href="#proposta" class="hover:text-[var(--dourado)]">Proposta</a>
+          <a href="#parceiros" class="hover:text-[var(--dourado)]">Parceiros</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
