@@ -6,6 +6,9 @@ import {
   Boxes,
   CheckCircle,
   Leaf,
+  Mail,
+  MapPin,
+  Phone,
   ShieldCheck,
   Truck,
   Users,
@@ -26,6 +29,51 @@ const item = {
 
 function Home() {
   const { open } = useQuoteModal();
+  const services = [
+    {
+      icon: <Truck size={28} className="card__icon" />,
+      title: "Transporte fracionado premium",
+      description:
+        "Rede dedicada de cross-docking, veículos rastreados e SLA de coleta sob medida para operações B2B.",
+    },
+    {
+      icon: <Boxes size={28} className="card__icon" />,
+      title: "Logística integrada",
+      description:
+        "Planejamento, armazenagem e distribuição coordenados pelo nosso time de especialistas com dados em tempo real.",
+    },
+    {
+      icon: <ShieldCheck size={28} className="card__icon" />,
+      title: "Operações sensíveis",
+      description:
+        "Camadas adicionais de segurança, monitoramento 24/7 e protocolos de contingência para cargas de alto valor.",
+    },
+  ];
+
+  const sectors = [
+    { title: "Varejo e e-commerce", detail: "Reposição ágil e slots de entrega garantidos." },
+    { title: "Indústria farmacêutica", detail: "Protocolos GDP e temperatura controlada." },
+    { title: "Bens de consumo", detail: "Campanhas promocionais sincronizadas." },
+    { title: "Tecnologia", detail: "Segurança reforçada e seguros dedicados." },
+  ];
+
+  const blogPosts = [
+    {
+      title: "Como reduzir o lead time sem aumentar custos",
+      tag: "Estratégia",
+      link: "/blog/lead-time",
+    },
+    {
+      title: "O que muda com a logística omnichannel",
+      tag: "Tendências",
+      link: "/blog/omnichannel",
+    },
+    {
+      title: "Checklist de segurança para cargas sensíveis",
+      tag: "Operações",
+      link: "/blog/checklist-seguranca",
+    },
+  ];
 
   return (
     <div>
@@ -96,53 +144,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section" id="services">
-        <div className="container">
-          <motion.div className="section__header" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={container}>
-            <motion.span className="section__kicker" variants={item}>
-              O que entregamos
-            </motion.span>
-            <motion.h2 variants={item}>Soluções completas para toda a cadeia logística</motion.h2>
-            <motion.p variants={item}>
-              Nossa frota híbrida, infraestrutura de armazenagem e time consultivo garantem desempenho extremo do seu supply chain.
-            </motion.p>
-          </motion.div>
-          <motion.div className="grid grid-3" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
-            <motion.article className="card" variants={item}>
-              <Truck size={28} className="card__icon" />
-              <h3>Transporte fracionado premium</h3>
-              <p>
-                Rede dedicada de cross-docking, veículos rastreados e SLA de coleta sob medida para operações B2B.
-              </p>
-              <Link to="/servicos" className="card__link">
-                Detalhar solução
-              </Link>
-            </motion.article>
-            <motion.article className="card" variants={item}>
-              <Boxes size={28} className="card__icon" />
-              <h3>Logística integrada</h3>
-              <p>
-                Planejamento, armazenagem e distribuição coordenados pelo nosso time de especialistas com dados em tempo real.
-              </p>
-              <Link to="/servicos" className="card__link">
-                Ver mais
-              </Link>
-            </motion.article>
-            <motion.article className="card" variants={item}>
-              <ShieldCheck size={28} className="card__icon" />
-              <h3>Operações sensíveis</h3>
-              <p>
-                Camadas adicionais de segurança, monitoramento 24/7 e protocolos de contingência para cargas de alto valor.
-              </p>
-              <Link to="/servicos" className="card__link">
-                Entenda como
-              </Link>
-            </motion.article>
-          </motion.div>
-        </div>
-      </section>
-
-      <section className="section section--split" id="about">
+      <section className="section section--split" id="institucional">
         <div className="container section__split">
           <motion.div className="section__split-copy" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={container}>
             <motion.span className="section__kicker" variants={item}>
@@ -185,7 +187,7 @@ function Home() {
         </div>
       </section>
 
-      <section className="section section--highlight" id="advantages">
+      <section className="section section--highlight" id="diferenciais">
         <div className="container section__highlight">
           <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
             <motion.span className="section__kicker" variants={item}>
@@ -209,47 +211,147 @@ function Home() {
         </div>
       </section>
 
-      <section className="section" id="sustainability">
-        <div className="container section__sustainability">
-          <motion.div
-            className="section__sustainability-copy"
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true, amount: 0.3 }}
-            variants={container}
-          >
+      <section className="section section--split" id="rastreamento">
+        <div className="container section__split">
+          <motion.div className="section__split-copy" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={container}>
             <motion.span className="section__kicker" variants={item}>
-              Compromisso ESG
+              Rastreamento e torre de controle
             </motion.span>
-            <motion.h2 variants={item}>Sustentabilidade e impacto positivo</motion.h2>
+            <motion.h2 variants={item}>Visibilidade em tempo real em cada quilômetro</motion.h2>
             <motion.p variants={item}>
-              Frota com veículos híbridos, compensação de carbono e projetos sociais junto às comunidades onde atuamos.
+              Atuamos com protocolos de geofencing, alertas proativos e dashboards personalizados para que seu time acompanhe cada expedição.
             </motion.p>
             <motion.ul className="list" variants={container}>
               <motion.li variants={item}>
-                <Leaf size={18} /> Neutralização de 100% das emissões diretas
+                <CheckCircle size={18} /> Monitoramento 24/7 integrado a sistemas TMS/WMS
               </motion.li>
               <motion.li variants={item}>
-                <ShieldCheck size={18} /> Treinamentos de segurança e direção defensiva
+                <CheckCircle size={18} /> Análises preditivas para antecipar desvios de rota
               </motion.li>
               <motion.li variants={item}>
-                <Users size={18} /> Programas de formação para motoristas e familiares
+                <CheckCircle size={18} /> Relatórios executivos com KPIs acionáveis
               </motion.li>
             </motion.ul>
           </motion.div>
           <motion.figure
-            className="section__sustainability-media"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            className="section__split-media"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
           >
-            <img src="/Background.jpg" alt="Galpão logístico moderno" />
+            <img src="/operador-monitorando-entregas.jpg" alt="Analista monitorando entregas em telas" />
           </motion.figure>
         </div>
       </section>
 
-      <section className="section section--cta">
+      <section className="section" id="servicos">
+        <div className="container">
+          <motion.div className="section__header" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={container}>
+            <motion.span className="section__kicker" variants={item}>
+              Portfólio completo
+            </motion.span>
+            <motion.h2 variants={item}>Serviços que aceleram o seu supply chain</motion.h2>
+            <motion.p variants={item}>
+              Cada solução é conectada à nossa torre de controle e às células dedicadas de atendimento consultivo.
+            </motion.p>
+          </motion.div>
+          <motion.div className="grid grid-3" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+            {services.map((service) => (
+              <motion.article className="card" key={service.title} variants={item}>
+                {service.icon}
+                <h3>{service.title}</h3>
+                <p>{service.description}</p>
+                <Link to="/servicos" className="card__link">
+                  Explorar serviço
+                </Link>
+              </motion.article>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="section" id="setores">
+        <div className="container">
+          <motion.div className="section__header" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={container}>
+            <motion.span className="section__kicker" variants={item}>
+              Soluções por setor
+            </motion.span>
+            <motion.h2 variants={item}>Mosaico de operações especializadas</motion.h2>
+            <motion.p variants={item}>
+              Customizamos rotas, embalagens e SLAs conforme o segmento para manter sua marca em destaque.
+            </motion.p>
+          </motion.div>
+          <motion.div className="grid grid-4" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+            {sectors.map((sector) => (
+              <motion.article className="card card--minimal" key={sector.title} variants={item}>
+                <h3>{sector.title}</h3>
+                <p>{sector.detail}</p>
+              </motion.article>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="section section--highlight" id="atento-social">
+        <div className="container section__highlight">
+          <motion.div variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }}>
+            <motion.span className="section__kicker" variants={item}>
+              Atento Social
+            </motion.span>
+            <motion.h2 variants={item}>Impacto positivo em cada rota</motion.h2>
+            <motion.p variants={item}>
+              Neutralizamos emissões com parceiros certificados e apoiamos programas de capacitação para motoristas e comunidades vizinhas às nossas bases.
+            </motion.p>
+            <motion.ul className="list" variants={container}>
+              <motion.li variants={item}>
+                <Leaf size={18} /> 100% das emissões diretas compensadas
+              </motion.li>
+              <motion.li variants={item}>
+                <Users size={18} /> +500 pessoas impactadas por projetos educacionais
+              </motion.li>
+              <motion.li variants={item}>
+                <ShieldCheck size={18} /> Programas contínuos de segurança e direção defensiva
+              </motion.li>
+            </motion.ul>
+            <motion.div className="section__cta" variants={item}>
+              <button type="button" className="btn btn-primary" onClick={open}>
+                Conheça o programa
+              </button>
+              <Link to="/sustentabilidade" className="section__cta-secondary">
+                Saiba mais
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="section" id="blog">
+        <div className="container">
+          <motion.div className="section__header" initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.3 }} variants={container}>
+            <motion.span className="section__kicker" variants={item}>
+              Insights do time
+            </motion.span>
+            <motion.h2 variants={item}>Últimos artigos do blog</motion.h2>
+            <motion.p variants={item}>
+              Conteúdo curto para orientar decisões rápidas sobre logística e atendimento ao cliente.
+            </motion.p>
+          </motion.div>
+          <motion.div className="grid grid-3" variants={container} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.2 }}>
+            {blogPosts.map((post) => (
+              <motion.article className="card" key={post.title} variants={item}>
+                <span className="badge">{post.tag}</span>
+                <h3>{post.title}</h3>
+                <Link to={post.link} className="card__link">
+                  Ler artigo
+                </Link>
+              </motion.article>
+            ))}
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="section section--cta" id="contato-rapido">
         <div className="container section__cta-wrapper">
           <motion.div
             className="section__cta-card"
@@ -258,16 +360,37 @@ function Home() {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
           >
-            <h2>Vamos acelerar sua cadeia logística?</h2>
-            <p>
-              Preencha alguns detalhes sobre a sua operação e receba um plano personalizado com oportunidades de melhoria.
-            </p>
+            <h2>Contato rápido com especialistas</h2>
+            <p>Escolha o melhor canal e fale com quem entende do seu negócio agora mesmo.</p>
+            <div className="section__cta-grid">
+              <div className="section__cta-item">
+                <Phone size={20} />
+                <div>
+                  <strong>Telefone</strong>
+                  <p>(11) 4000-2024</p>
+                </div>
+              </div>
+              <div className="section__cta-item">
+                <Mail size={20} />
+                <div>
+                  <strong>E-mail</strong>
+                  <p>contato@atento.com.br</p>
+                </div>
+              </div>
+              <div className="section__cta-item">
+                <MapPin size={20} />
+                <div>
+                  <strong>Escritórios</strong>
+                  <p>São Paulo, Recife e Curitiba</p>
+                </div>
+              </div>
+            </div>
             <div className="section__cta">
               <button type="button" className="btn btn-primary" onClick={open}>
-                Iniciar proposta
+                Solicitar retorno
               </button>
               <Link to="/contato" className="section__cta-secondary">
-                Outros canais
+                Ver canais completos
               </Link>
             </div>
           </motion.div>
