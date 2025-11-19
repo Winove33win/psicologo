@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { NavLink, Outlet, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronDown, Menu, X } from "lucide-react";
@@ -73,8 +73,12 @@ export function MainLayout() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
+
+  const [selectedService, setSelectedService] = useState(null);
+
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileSections, setMobileSections] = useState({});
+
 
   useEffect(() => {
     const SCROLL_ENTER_THRESHOLD = 64;
@@ -101,6 +105,17 @@ export function MainLayout() {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [location.pathname]);
 
+
+  const handleOpenQuote = useCallback((serviceKey) => {
+    setSelectedService(typeof serviceKey === "string" ? serviceKey : null);
+    setIsQuoteOpen(true);
+  }, []);
+
+  const handleCloseQuote = useCallback(() => {
+    setIsQuoteOpen(false);
+    setSelectedService(null);
+  }, []);
+
   const toggleDropdown = (label) => {
     setActiveDropdown((current) => (current === label ? null : label));
   };
@@ -109,13 +124,15 @@ export function MainLayout() {
     setMobileSections((current) => ({ ...current, [label]: !current[label] }));
   };
 
+
   const contextValue = useMemo(
     () => ({
       isOpen: isQuoteOpen,
-      open: () => setIsQuoteOpen(true),
-      close: () => setIsQuoteOpen(false),
+      selectedService,
+      open: handleOpenQuote,
+      close: handleCloseQuote,
     }),
-    [isQuoteOpen]
+    [handleOpenQuote, handleCloseQuote, isQuoteOpen, selectedService]
   );
 
   const handleMobileNavigate = () => {
@@ -226,7 +243,7 @@ export function MainLayout() {
               })}
             </nav>
             <div className="header-actions">
-              <button type="button" className="btn btn-outline" onClick={() => setIsQuoteOpen(true)}>
+              <button type="button" className="btn btn-outline" onClick={handleOpenQuote}>
                 Solicitar cotação
               </button>
               <button
@@ -333,7 +350,7 @@ export function MainLayout() {
                     );
                   })}
                 </div>
-                <button type="button" className="btn btn-primary" onClick={() => setIsQuoteOpen(true)}>
+                <button type="button" className="btn btn-primary" onClick={handleOpenQuote}>
                   Solicitar cotação
                 </button>
               </motion.nav>
@@ -358,7 +375,7 @@ export function MainLayout() {
 
         <Footer />
         <ScrollToTopButton />
-        <QuoteModal isOpen={isQuoteOpen} onClose={() => setIsQuoteOpen(false)} />
+        <QuoteModal isOpen={isQuoteOpen} selectedService={selectedService} onClose={handleCloseQuote} />
       </div>
     </QuoteModalContext.Provider>
   );
