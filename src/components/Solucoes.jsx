@@ -1,42 +1,39 @@
-import { Factory, Leaf, Package, Pill, Sparkles, Truck } from "lucide-react";
+import { Flower2, HeartPulse, Lamp, MoonStar, Sparkles, Users } from "lucide-react";
 
 const CATEGORIES = [
-  { title: "Consumo e Varejo", icon: Package, items: ["Bebidas e Alimentos", "Calçados e Vestuário", "E-commerce"] },
-  { title: "Saúde e Beleza", icon: Pill, items: ["Farmacêutico", "Cosmético"] },
-  {
-    title: "Indústria e Produção",
-    icon: Factory,
-    items: ["Industrial", "Automotivo", "Eletrodomésticos", "Engenharia e Construção"],
-  },
-  { title: "Agronegócio e Energia", icon: Leaf, items: ["Agronegócio", "Energia e Mineração"] },
-  { title: "Tecnologia e Comunicação", icon: Sparkles, items: ["Tecnologia", "Publicidade e Comunicação"] },
-  { title: "Cultura e Esportes", icon: Truck, items: ["Editorial", "Esportivo"] },
+  { title: "Ansiedade e Estresse", icon: HeartPulse, items: ["Regulação emocional", "Burnout e exaustão", "Crises de ansiedade"] },
+  { title: "Autoconhecimento", icon: Lamp, items: ["Propósito e valores", "Gestão de carreira", "Hábitos saudáveis"] },
+  { title: "Relacionamentos", icon: Users, items: ["Comunicação assertiva", "Limites saudáveis", "Lutos e transições"] },
+  { title: "Sono e Rotina", icon: MoonStar, items: ["Higiene do sono", "Rituais de descanso", "Sobrecarga cognitiva"] },
+  { title: "Alta performance", icon: Sparkles, items: ["Foco e organização", "Tomada de decisão", "Autogestão de metas"] },
+  { title: "Bem-estar holístico", icon: Flower2, items: ["Mindfulness guiado", "Respiração e grounding", "Diário emocional"] },
 ];
 
 function Solucoes() {
   return (
-    <section id="solucoes" className="bg-slate-100 py-20">
-      <span id="servicos" className="sr-only">
-        Serviços e soluções
-      </span>
+    <section id="especialidades" className="bg-slate-100 py-20">
       <div className="mx-auto w-full max-w-6xl px-6">
         <div className="mb-10 text-center" data-aos="fade-up">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-700">Setores atendidos</p>
-          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">Soluções sob medida para cada segmento</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-700">Especialidades</p>
+          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">Planos terapêuticos para diferentes momentos</h2>
           <p className="mt-3 text-lg text-slate-600">
-            Operações modulares e escaláveis para consumo, indústria, saúde, tecnologia e mais.
+            Cada ciclo de acompanhamento inclui sessões estruturadas, materiais de apoio e exercícios práticos entre os encontros.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2">
           {CATEGORIES.map(({ title, icon: Icon, items }, index) => (
             <div
               key={title}
-              className={`${index % 2 === 0 ? "bg-white" : "bg-blue-900/90 text-white"} rounded-3xl p-6 shadow-xl transition hover:-translate-y-1`}
+              className={`${index % 2 === 0 ? "bg-white" : "bg-emerald-700 text-white"} rounded-3xl p-6 shadow-xl transition hover:-translate-y-1`}
               data-aos="fade-up"
               data-aos-delay={index * 60}
             >
               <div className="mb-4 flex items-center gap-3">
-                <span className={`flex h-12 w-12 items-center justify-center rounded-2xl ${index % 2 === 0 ? "bg-blue-900/10 text-yellow-400" : "bg-white/10 text-yellow-200"}`}>
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-2xl ${
+                    index % 2 === 0 ? "bg-emerald-100 text-emerald-700" : "bg-white/10 text-emerald-50"
+                  }`}
+                >
                   <Icon className="h-6 w-6" />
                 </span>
                 <h3 className="text-xl font-semibold">{title}</h3>
@@ -44,7 +41,7 @@ function Solucoes() {
               <ul className="space-y-2 text-base">
                 {items.map((item) => (
                   <li key={item} className="flex items-center gap-2">
-                    <span className="h-1.5 w-1.5 rounded-full bg-yellow-400" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
                     {item}
                   </li>
                 ))}
