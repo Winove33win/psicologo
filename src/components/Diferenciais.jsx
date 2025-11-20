@@ -1,34 +1,34 @@
-import { Clock, Cpu, Globe2, Layers, ShieldCheck, Users } from "lucide-react";
+import { Brain, HeartHandshake, Laptop2, Leaf, ShieldCheck, Sparkles } from "lucide-react";
 
 const FEATURES = [
-  { icon: Cpu, title: "Tecnologia em tempo real", description: "Painéis e torre de controle com dados atualizados segundo a segundo." },
-  { icon: Users, title: "Equipe Especializada", description: "Consultores e operadores certificados em cada vertical de negócio." },
-  { icon: ShieldCheck, title: "Segurança e Confiabilidade", description: "Protocolos rigorosos, escoltas e seguro completo para cargas sensíveis." },
-  { icon: Clock, title: "Operação 24h", description: "Monitoramento contínuo com redundância energética e equipes em turnos." },
-  { icon: Layers, title: "Atendimento Multimodal", description: "Integração entre modal rodoviário, aéreo, dedicado e logística reversa." },
-  { icon: Globe2, title: "Cobertura Nacional", description: "Rede de filiais e parceiros homologados cobrindo todo o território brasileiro." },
+  { icon: HeartHandshake, title: "Acolhimento ativo", description: "Escuta qualificada e segura para que você se sinta confortável a cada sessão." },
+  { icon: Brain, title: "Base científica", description: "Protocolos inspirados em TCC, mindfulness e regulação emocional validados." },
+  { icon: Laptop2, title: "Formato híbrido", description: "Atendimentos online ou presenciais com a mesma qualidade e continuidade." },
+  { icon: Leaf, title: "Plano personalizado", description: "Planejamento terapêutico com metas claras, exercícios e monitoramento." },
+  { icon: ShieldCheck, title: "Confidencialidade", description: "Processos éticos, sigilo profissional e contratos transparentes." },
+  { icon: Sparkles, title: "Microvitórias semanais", description: "Check-ins curtos para apoiar mudanças entre uma sessão e outra." },
 ];
 
 function Diferenciais() {
   return (
-    <section id="diferenciais" className="bg-white py-20">
+    <section id="beneficios" className="bg-emerald-50/70 py-20">
       <div className="mx-auto w-full max-w-6xl px-6">
         <div className="mb-12 space-y-4 text-center" data-aos="fade-up">
-          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-blue-700">Diferenciais</p>
-          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">Excelência que gera confiança</h2>
+          <p className="text-sm font-semibold uppercase tracking-[0.3em] text-emerald-700">Por que escolher</p>
+          <h2 className="text-3xl font-semibold text-slate-900 md:text-4xl">Terapia que se adapta à sua rotina</h2>
           <p className="text-lg text-slate-600">
-            Cada operação é desenhada para garantir previsibilidade, controle absoluto e experiências memoráveis para os seus clientes.
+            Um cuidado que combina ciência, presença e ferramentas práticas para transformar o cotidiano e prevenir recaídas.
           </p>
         </div>
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map(({ icon: Icon, title, description }, index) => (
             <div
               key={title}
-              className="rounded-3xl border border-slate-100 bg-slate-50/70 p-6 shadow-lg shadow-blue-900/5"
+              className="rounded-3xl border border-emerald-100 bg-white p-6 shadow-lg shadow-emerald-100/60"
               data-aos="fade-up"
               data-aos-delay={index * 80}
             >
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-900/10 text-yellow-400">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-emerald-100 text-emerald-700">
                 <Icon className="h-6 w-6" />
               </div>
               <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
